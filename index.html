@@ -7,161 +7,184 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://shjyang.github.io/">
     <link rel="shortcut icon" href="https://shjyang.github.io/favicon.ico" type="image/x-icon">
-   <style>
-    body {
-        font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(to bottom, #87CEEB, #ffffff);
-        color: #333;
-        line-height: 1.6;
-    }
-    header {
-        background: linear-gradient(to bottom, #3a345e, #87CEEB);
-        color: white;
-        padding: 40px 0;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    header h1 {
-        margin: 0;
-        font-size: 2.5em;
-    }
-    header p {
-        margin: 5px 0;
-        font-size: 1.2em;
-    }
-    header p.p3 {
-        font-size: 1.2em; /* Increase the font size slightly */
-        margin: 5px 0; /* Keep the existing margin */
-                }
-    .container {
-        width: 80%;
-        margin: auto;
-        overflow: hidden;
-    }
-    .about-section {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
-    .about-text {
-        flex: 1;
-        padding-right: 20px;
-    }
-    .about-text a {
-        text-decoration: none; /* Remove underline */
-        color: #1a50bc; /* Set the color to blue */
-    }
-    .about-text a:hover {
-        text-decoration: underline; /* Add underline on hover */
-        color: #1a50bc; /* Keep the color blue on hover */
-    }
-    .profile img {
-        width: 250px;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        border: 2px solid #fff;
-    }
-    nav {
-        display: flex;
-        justify-content: center;
-        background: #ADD8E6;
-        padding: 10px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    nav a {
-        color: black;
-        padding: 10px 20px;
-        text-decoration: none;
-        font-size: 18px;
-        transition: background 0.3s, color 0.3s;
-    }
-    nav a:hover {
-        background: #1a50bc;
-        color: white;
-        border-radius: 5px;
-    }
-    section {
-        padding: 20px;
-        background: white;
-        margin-top: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    .teaching-entry {
-        margin-bottom: 30px;
-        padding: 15px;
-        background: #f9f9f9;
-        border-radius: 8px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .teaching-entry h3 {
-        color: #2c3650;
-        margin-bottom: 10px;
-    }
-    .teaching-entry p {
-        margin: 5px 0;
-    }
-    .teaching-entry ul {
-        margin: 10px 0;
-        padding-left: 20px;
-    }
-    .teaching-entry ul li {
-        margin-bottom: 5px;
-    }
-    .teaching-entry a {
-        color: #1a50bc;
-        text-decoration: none;
-    }
-    .teaching-entry a:hover {
-        text-decoration: underline;
-    }
-    footer {
-        text-align: center;
-        padding: 20px;
-       background: linear-gradient(to bottom,  #ffffff, #87CEEB);
-        color: white;
-        margin-top: 20px;
-        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .publication-list li {
-        margin-bottom: 15px;
-    }
-    .publication-list a {
-        color: #1a50bc;
-        text-decoration: none;
-    }
-    .publication-list a:hover {
-        text-decoration: underline;
-    }
-    .links-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-        margin-top: 10px;
-    }
-    .links-grid a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        background: #f9f9f9;
-        border-radius: 5px;
-        color: #1a50bc;
-        text-decoration: none;
-        transition: background 0.3s, color 0.3s;
-    }
-    .links-grid a:hover {
-        background: #1a50bc;
-        color: white;
-    }
-</style>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #87CEEB, #ffffff);
+            color: #333;
+            line-height: 1.8;
+        }
+        header {
+            background: linear-gradient(to bottom, #3a345e, #87CEEB);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: bold;
+        }
+        header p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .about-text {
+            flex: 1;
+            padding-right: 30px;
+        }
+        .about-text a {
+            text-decoration: none;
+            color: #1a50bc;
+        }
+        .about-text a:hover {
+            text-decoration: underline;
+        }
+        .profile img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid #fff;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #ADD8E6;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background: #1a50bc;
+            color: white;
+            border-radius: 5px;
+        }
+        section {
+            padding: 30px;
+            background: white;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .teaching-entry {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .teaching-entry h3 {
+            color: #2c3650;
+            margin-bottom: 15px;
+        }
+        .teaching-entry p {
+            margin: 10px 0;
+        }
+        .teaching-entry ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        .teaching-entry ul li {
+            margin-bottom: 10px;
+        }
+        .teaching-entry a {
+            color: #1a50bc;
+            text-decoration: none;
+        }
+        .teaching-entry a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background:linear-gradient(to bottom,  #ffffff,#87CEEB);
+            color: black;
+            margin-top: 30px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .publication-list li {
+            margin-bottom: 20px;
+        }
+        .publication-list a {
+            color: #1a50bc;
+            text-decoration: none;
+        }
+        .publication-list a:hover {
+            text-decoration: underline;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .links-grid a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            color: #1a50bc;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+        .links-grid a:hover {
+            background: #1a50bc;
+            color: white;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1a50bc;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: none;
+        }
+        .back-to-top:hover {
+            background: #2c3650;
+        }
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile img {
+                margin-top: 20px;
+            }
+            .links-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -190,7 +213,7 @@
             </div>
         </section>
 
-        <section id="publications">
+         <section id="publications">
             <h2>Publications</h2>
             <p>Here are my publications and preprints:</p>
             <ul class="publication-list">
@@ -210,6 +233,7 @@
                     <a href="https://arxiv.org/pdf/1909.04635.pdf">[Arxiv]</a> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<a href="https://projecteuclid.org/journals/annales-de-linstitut-henri-poincare-probabilites-et-statistiques/volume-57/issue-3/Cutoff-for-polymer-pinning-dynamics-in-the-repulsive-phase/10.1214/20-AIHP1127.full">[At publisher]</a> <b>Annales de l'Institut Henri Poincaré, Probabilités et Statistiques</b>. 57(3): 1306-1335 (2021).</li>
             </ul>
         </section>
+
 
         <section id="teaching">
             <h2>Teaching</h2>
@@ -231,7 +255,7 @@
                 <p><strong>Minicourse:</strong> <a href="https://sites.google.com/view/profe-ime-ufba/events/minicursos-2021?authuser=0">Mixing time for interface models and particle system</a> (Nov/2021 - Jan/2022)</p>
                 <p><strong>References:</strong></p>
                 <ul>
-                    <li><a href="https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf">Markov Chains and Mixing Times (D. Levin and Y. Peres)</a></li>
+                    <li><a href="https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf">Markov Chains and Mixing Times (D. Levin and Y. Peres)</a></li>     
                     <li><a href="https://www.cambridge.org/core/books/markov-chains/A3F966B10633A32C8F06F37158031739">Markov Chains (J. Norris)</a></li>
                     <li><a href="https://shjyang.github.io/thesis.pdf">Mixing Times for Interface Models and Particle System (S. Yang)</a></li>
                 </ul>
@@ -247,7 +271,6 @@
             </div>
         </section>
 
-
         <section id="links">
             <h2>Links</h2>
             <div class="links-grid">
@@ -259,18 +282,35 @@
                 <a href="http://lattes.cnpq.br/2659802225345942">Lattes</a>
             </div>
             <div style="text-align: center; margin-top: 20px;">
-<a href="https://clustrmaps.com/site/1btjd"  title="Visit tracker">
-<img src="//www.clustrmaps.com/map_v2.png?d=tc8dPwGMatf6-r1r02mnkm8GWFRCa9CC05puVe9dSsE&cl=ffffff"
-     align="right",height=120 width=150 boarder='1'>
-          </section>
-
+                <a href="https://clustrmaps.com/site/1btjd" title="Visit tracker">
+                    <img src="//www.clustrmaps.com/map_v2.png?d=tc8dPwGMatf6-r1r02mnkm8GWFRCa9CC05puVe9dSsE&cl=ffffff" align="right" height="120" width="150" border="1">
+                </a>
+            </div>
+        </section>
     </div>
 
+<footer>
+    <p>行到水穷处，坐看云起时。 （唐）-- 王维 </p>
+</footer>
 
+    <a href="#" class="back-to-top">↑ Back to Top</a>
 
-    <footer>
-        
-    </footer>
+    <script>
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
-
