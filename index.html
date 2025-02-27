@@ -7,149 +7,157 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://shjyang.github.io/">
     <link rel="shortcut icon" href="https://shjyang.github.io/favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #87CEEB, #ffffff);
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(to bottom, #3a345e, #87CEEB);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin: 5px 0;
-            font-size: 1.2em;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        .about-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .about-text {
-            flex: 1;
-            padding-right: 20px;
-        }
-        .profile img {
-            width: 250px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            border: 2px solid #fff;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #ADD8E6;
-            padding: 10px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        nav a {
-            color: black;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            transition: background 0.3s, color 0.3s;
-        }
-        nav a:hover {
-            background: #1a50bc;
-            color: white;
-            border-radius: 5px;
-        }
-        section {
-            padding: 20px;
-            background: white;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .teaching-entry {
-            margin-bottom: 30px;
-            padding: 15px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .teaching-entry h3 {
-            color: #2c3650;
-            margin-bottom: 10px;
-        }
-        .teaching-entry p {
-            margin: 5px 0;
-        }
-        .teaching-entry ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        .teaching-entry ul li {
-            margin-bottom: 5px;
-        }
-        .teaching-entry a {
-            color: #1a50bc;
-            text-decoration: none;
-        }
-        .teaching-entry a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c3650;
-            color: white;
-            margin-top: 20px;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .publication-list li {
-            margin-bottom: 15px;
-        }
-        .publication-list a {
-            color: #1a50bc;
-            text-decoration: none;
-        }
-        .publication-list a:hover {
-            text-decoration: underline;
-        }
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .links-grid a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            background: #f9f9f9;
-            border-radius: 5px;
-            color: #1a50bc;
-            text-decoration: none;
-            transition: background 0.3s, color 0.3s;
-        }
-        .links-grid a:hover {
-            background: #1a50bc;
-            color: white;
-        }
-    </style>
+   <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #87CEEB, #ffffff);
+        color: #333;
+        line-height: 1.6;
+    }
+    header {
+        background: linear-gradient(to bottom, #3a345e, #87CEEB);
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+    header p {
+        margin: 5px 0;
+        font-size: 1.2em;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+    .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .about-text {
+        flex: 1;
+        padding-right: 20px;
+    }
+    .about-text a {
+        text-decoration: none; /* Remove underline */
+        color: #1a50bc; /* Set the color to blue */
+    }
+    .about-text a:hover {
+        text-decoration: underline; /* Add underline on hover */
+        color: #1a50bc; /* Keep the color blue on hover */
+    }
+    .profile img {
+        width: 250px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border: 2px solid #fff;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        background: #ADD8E6;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    nav a {
+        color: black;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background 0.3s, color 0.3s;
+    }
+    nav a:hover {
+        background: #1a50bc;
+        color: white;
+        border-radius: 5px;
+    }
+    section {
+        padding: 20px;
+        background: white;
+        margin-top: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .teaching-entry {
+        margin-bottom: 30px;
+        padding: 15px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .teaching-entry h3 {
+        color: #2c3650;
+        margin-bottom: 10px;
+    }
+    .teaching-entry p {
+        margin: 5px 0;
+    }
+    .teaching-entry ul {
+        margin: 10px 0;
+        padding-left: 20px;
+    }
+    .teaching-entry ul li {
+        margin-bottom: 5px;
+    }
+    .teaching-entry a {
+        color: #1a50bc;
+        text-decoration: none;
+    }
+    .teaching-entry a:hover {
+        text-decoration: underline;
+    }
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #2c3650;
+        color: white;
+        margin-top: 20px;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .publication-list li {
+        margin-bottom: 15px;
+    }
+    .publication-list a {
+        color: #1a50bc;
+        text-decoration: none;
+    }
+    .publication-list a:hover {
+        text-decoration: underline;
+    }
+    .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .links-grid a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background: #f9f9f9;
+        border-radius: 5px;
+        color: #1a50bc;
+        text-decoration: none;
+        transition: background 0.3s, color 0.3s;
+    }
+    .links-grid a:hover {
+        background: #1a50bc;
+        color: white;
+    }
+</style>
 </head>
 <body>
     <header>
