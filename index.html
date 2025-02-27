@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="https://shjyang.github.io/favicon.ico" type="image/x-icon">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(to bottom, #87CEEB, #ffffff);
@@ -19,18 +19,20 @@
         header {
             background: linear-gradient(to bottom, #3a345e, #87CEEB);
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         header h1 {
             margin: 0;
-            font-size: 3em;
-            font-weight: bold;
+            font-size: 3.5em;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
         header p {
             margin: 10px 0;
             font-size: 1.2em;
+            opacity: 0.9;
         }
         .container {
             width: 90%;
@@ -42,7 +44,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 30px;
+            margin-top: 40px;
+            gap: 40px;
         }
         .about-text {
             flex: 1;
@@ -51,6 +54,7 @@
         .about-text a {
             text-decoration: none;
             color: #1a50bc;
+            font-weight: 500;
         }
         .about-text a:hover {
             text-decoration: underline;
@@ -61,6 +65,10 @@
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             border: 2px solid #fff;
+            transition: transform 0.3s ease;
+        }
+        .profile img:hover {
+            transform: scale(1.05);
         }
         nav {
             display: flex;
@@ -73,23 +81,29 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         nav a {
-            color:  #1a50bc;
+            color: #1a50bc; /* Blue text color */
             padding: 10px 20px;
             text-decoration: none;
             font-size: 18px;
             transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
         }
         nav a:hover {
             background: #1a50bc;
-            color: white;
+            color: white; /* Text color on hover */
             border-radius: 5px;
         }
         section {
-            padding: 30px;
+            padding: 40px;
             background: white;
-            margin-top: 30px;
+            margin-top: 40px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
         }
         .teaching-entry {
             margin-bottom: 30px;
@@ -101,6 +115,7 @@
         .teaching-entry h3 {
             color: #2c3650;
             margin-bottom: 15px;
+            font-size: 1.5em;
         }
         .teaching-entry p {
             margin: 10px 0;
@@ -121,11 +136,12 @@
         }
         footer {
             text-align: center;
-            padding: 30px;
-            background:linear-gradient(to bottom,  #ffffff,#87CEEB);
+            padding: 40px;
+            background: linear-gradient(to bottom, #ffffff, #87CEEB);
             color: black;
-            margin-top: 30px;
+            margin-top: 40px;
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 1.1em;
         }
         .publication-list li {
             margin-bottom: 20px;
@@ -168,6 +184,7 @@
             border-radius: 5px;
             text-decoration: none;
             display: none;
+            transition: background 0.3s;
         }
         .back-to-top:hover {
             background: #2c3650;
@@ -182,6 +199,12 @@
             }
             .links-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+            header h1 {
+                font-size: 2.5em;
+            }
+            section {
+                padding: 20px;
             }
         }
     </style>
@@ -213,7 +236,7 @@
             </div>
         </section>
 
-         <section id="publications">
+        <section id="publications">
             <h2>Publications</h2>
             <p>Here are my publications and preprints:</p>
             <ul class="publication-list">
@@ -233,7 +256,6 @@
                     <a href="https://arxiv.org/pdf/1909.04635.pdf">[Arxiv]</a> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<a href="https://projecteuclid.org/journals/annales-de-linstitut-henri-poincare-probabilites-et-statistiques/volume-57/issue-3/Cutoff-for-polymer-pinning-dynamics-in-the-repulsive-phase/10.1214/20-AIHP1127.full">[At publisher]</a> <b>Annales de l'Institut Henri Poincaré, Probabilités et Statistiques</b>. 57(3): 1306-1335 (2021).</li>
             </ul>
         </section>
-
 
         <section id="teaching">
             <h2>Teaching</h2>
@@ -289,9 +311,9 @@
         </section>
     </div>
 
-<footer>
-    <p>行到水穷处，坐看云起时。 （唐）-- 王维 </p>
-</footer>
+    <footer>
+        <p>行到水穷处，坐看云起时。 （唐）-- 王维 </p>
+    </footer>
 
     <a href="#" class="back-to-top">↑ Back to Top</a>
 
