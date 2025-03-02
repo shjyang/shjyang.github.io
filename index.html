@@ -8,6 +8,7 @@
     <link rel="canonical" href="https://shjyang.github.io/">
     <link rel="shortcut icon" href="https://shjyang.github.io/favicon.ico" type="image/x-icon">
     <style>
+        /* General Styles */
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
@@ -17,6 +18,7 @@
             line-height: 1.8;
             font-size: 16px;
         }
+
         header {
             background: linear-gradient(to bottom, #3a345e, #87CEEB);
             color: white;
@@ -24,6 +26,7 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         header h1 {
             margin: 0;
             font-size: 3.5em;
@@ -31,11 +34,13 @@
             letter-spacing: -1px;
             animation: fadeIn 2s ease-in-out;
         }
+
         header p {
             margin: 10px 0;
             font-size: 1.2em;
             opacity: 0.9;
         }
+
         .container {
             width: 90%;
             max-width: 1280px;
@@ -43,15 +48,15 @@
             overflow: hidden;
         }
 
-        /* Improved About Section */
+        /* About Section */
         .about-section {
             display: flex;
-            align-items: center; /* Center items vertically */
+            align-items: center;
             justify-content: space-between;
             margin-top: 40px;
             gap: 40px;
             padding: 20px;
-            background: #f9f9f9; /* Light background for contrast */
+            background: #f9f9f9;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -59,13 +64,13 @@
         .about-text {
             flex: 1;
             padding-right: 30px;
-            line-height: 1.8; /* Improved line height for readability */
+            line-height: 1.8;
         }
 
         .about-text p {
-            margin-bottom: 20px; /* Consistent spacing between paragraphs */
-            font-size: 1.1em; /* Slightly larger font size */
-            color: #444; /* Slightly darker text for better contrast */
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #444;
         }
 
         .about-text a {
@@ -77,12 +82,12 @@
 
         .about-text a:hover {
             text-decoration: underline;
-            color: #2c3650; /* Darker color on hover */
+            color: #2c3650;
         }
 
         .profile {
-            flex-shrink: 0; /* Prevent the image from shrinking */
-            text-align: right; /* Align the image to the right */
+            flex-shrink: 0;
+            text-align: right;
         }
 
         .profile img {
@@ -102,16 +107,16 @@
             .about-section {
                 flex-direction: column;
                 text-align: center;
-                gap: 20px; /* Reduced gap for smaller screens */
+                gap: 20px;
             }
 
             .about-text {
-                padding-right: 0; /* Remove padding on smaller screens */
-                text-align: center; /* Center text on smaller screens */
+                padding-right: 0;
+                text-align: center;
             }
 
             .profile {
-                text-align: center; /* Center the image on smaller screens */
+                text-align: center;
             }
 
             .profile img {
@@ -119,7 +124,7 @@
             }
         }
 
-        /* Rest of the styles remain unchanged */
+        /* Navigation */
         nav {
             display: flex;
             justify-content: center;
@@ -130,6 +135,7 @@
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         nav a {
             color: #1a50bc;
             padding: 10px 20px;
@@ -138,11 +144,14 @@
             transition: background 0.3s, color 0.3s, transform 0.3s;
             border-radius: 5px;
         }
+
         nav a:hover {
             background: #1a50bc;
             color: white;
             transform: translateY(-3px);
         }
+
+        /* Sections */
         section {
             padding: 40px;
             background: white;
@@ -151,10 +160,13 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         section:hover {
             transform: translateY(-5px);
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
         }
+
+        /* Teaching Section */
         .teaching-entry {
             margin-bottom: 30px;
             padding: 20px;
@@ -162,64 +174,69 @@
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .teaching-entry h3 {
             color: #2c3650;
             margin-bottom: 15px;
             font-size: 1.5em;
         }
+
         .teaching-entry p {
             margin: 10px 0;
         }
+
         .teaching-entry ul {
             margin: 15px 0;
             padding-left: 20px;
         }
+
         .teaching-entry ul li {
             margin-bottom: 10px;
         }
+
         .teaching-entry a {
             color: #1a50bc;
             text-decoration: none;
         }
+
         .teaching-entry a:hover {
             text-decoration: underline;
         }
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: linear-gradient(to bottom, #ffffff, #87CEEB);
-            color: black;
-            margin-top: 40px;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-            font-size: 1.1em;
-        }
-.publication-section {
+
+        /* Publications Section */
+        .publication-section {
             display: flex;
-            align-items: center; /* Center items vertically */
+            align-items: center;
             justify-content: space-between;
             margin-top: 40px;
             gap: 40px;
             padding: 20px;
-            background: #f9f9f9; /* Light background for contrast */
+            background: #f9f9f9;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .publication-list li {
             margin-bottom: 20px;
         }
+
         .publication-list a {
             color: #1a50bc;
             text-decoration: none;
         }
+
         .publication-list a:hover {
             text-decoration: underline;
         }
+
+        /* Links Section */
         .links-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
+
         .links-grid a {
             display: flex;
             align-items: center;
@@ -231,11 +248,25 @@
             text-decoration: none;
             transition: background 0.3s, color 0.3s, transform 0.3s;
         }
+
         .links-grid a:hover {
             background: #1a50bc;
             color: white;
             transform: translateY(-3px);
         }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(to bottom, #ffffff, #87CEEB);
+            color: black;
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 1.1em;
+        }
+
+        /* Back to Top Button */
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -249,39 +280,29 @@
             transition: background 0.3s, transform 0.3s;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         .back-to-top:hover {
             background: #2c3650;
             transform: translateY(-3px);
         }
+
         @media (max-width: 768px) {
             .links-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             }
+
             header h1 {
                 font-size: 2.5em;
             }
+
             section {
                 padding: 20px;
             }
         }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
-        }
-
-        /* Added styling for the Publications section */
-        #publications {
-            padding: 40px;
-            background: white;
-            margin-top: 40px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        #publications:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
