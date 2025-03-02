@@ -44,18 +44,33 @@
         }
 
         /* Improved About Section */
-        .about-section {
-            display: flex;
-            align-items: flex-start; /* Align items to the top */
-            justify-content: space-between;
-            margin-top: 40px;
-            gap: 40px;
-            padding: 20px;
-            background: #f9f9f9; /* Light background for contrast */
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .about-section {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 40px;
+    padding: 20px;
+    background: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.profile {
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    display: flex;
+    align-items: center; /* Center the image vertically */
+    justify-content: flex-end; /* Align the image to the right */
+}
+
+.profile img {
+    width: 400px; /* Increased size (previously 280px) */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+    transition: transform 0.3s ease;
+}
         .about-text {
             flex: 1;
             padding-right: 30px;
