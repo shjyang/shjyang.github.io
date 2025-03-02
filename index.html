@@ -15,11 +15,12 @@
             background: linear-gradient(to bottom, #87CEEB, #ffffff);
             color: #333;
             line-height: 1.8;
+            font-size: 16px;
         }
         header {
             background: linear-gradient(to bottom, #3a345e, #87CEEB);
             color: white;
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -28,6 +29,7 @@
             font-size: 3.5em;
             font-weight: 700;
             letter-spacing: -1px;
+            animation: fadeIn 2s ease-in-out;
         }
         header p {
             margin: 10px 0;
@@ -40,25 +42,49 @@
             margin: auto;
             overflow: hidden;
         }
+
+        /* Improved About Section */
         .about-section {
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Align items to the top */
             justify-content: space-between;
             margin-top: 40px;
             gap: 40px;
+            padding: 20px;
+            background: #f9f9f9; /* Light background for contrast */
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .about-text {
             flex: 1;
             padding-right: 30px;
+            line-height: 1.8; /* Improved line height for readability */
         }
+
+        .about-text p {
+            margin-bottom: 20px; /* Consistent spacing between paragraphs */
+            font-size: 1.1em; /* Slightly larger font size */
+            color: #444; /* Slightly darker text for better contrast */
+        }
+
         .about-text a {
             text-decoration: none;
             color: #1a50bc;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
+
         .about-text a:hover {
             text-decoration: underline;
+            color: #2c3650; /* Darker color on hover */
         }
+
+        .profile {
+            flex-shrink: 0; /* Prevent the image from shrinking */
+            text-align: right; /* Align the image to the right */
+        }
+
         .profile img {
             width: 250px;
             height: auto;
@@ -67,9 +93,33 @@
             border: 2px solid #fff;
             transition: transform 0.3s ease;
         }
+
         .profile img:hover {
             transform: scale(1.05);
         }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px; /* Reduced gap for smaller screens */
+            }
+
+            .about-text {
+                padding-right: 0; /* Remove padding on smaller screens */
+                text-align: center; /* Center text on smaller screens */
+            }
+
+            .profile {
+                text-align: center; /* Center the image on smaller screens */
+            }
+
+            .profile img {
+                margin-top: 20px;
+            }
+        }
+
+        /* Rest of the styles remain unchanged */
         nav {
             display: flex;
             justify-content: center;
@@ -81,17 +131,17 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         nav a {
-            color: #1a50bc; /* Blue text color */
+            color: #1a50bc;
             padding: 10px 20px;
             text-decoration: none;
             font-size: 18px;
-            transition: background 0.3s, color 0.3s;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
             border-radius: 5px;
         }
         nav a:hover {
             background: #1a50bc;
-            color: white; /* Text color on hover */
-            border-radius: 5px;
+            color: white;
+            transform: translateY(-3px);
         }
         section {
             padding: 40px;
@@ -168,11 +218,12 @@
             border-radius: 5px;
             color: #1a50bc;
             text-decoration: none;
-            transition: background 0.3s, color 0.3s;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
         }
         .links-grid a:hover {
             background: #1a50bc;
             color: white;
+            transform: translateY(-3px);
         }
         .back-to-top {
             position: fixed;
@@ -181,22 +232,17 @@
             background: #1a50bc;
             color: white;
             padding: 10px 15px;
-            border-radius: 5px;
+            border-radius: 50%;
             text-decoration: none;
             display: none;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
         .back-to-top:hover {
             background: #2c3650;
+            transform: translateY(-3px);
         }
         @media (max-width: 768px) {
-            .about-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .profile img {
-                margin-top: 20px;
-            }
             .links-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             }
@@ -206,6 +252,10 @@
             section {
                 padding: 20px;
             }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -236,6 +286,7 @@
             </div>
         </section>
 
+        <!-- Rest of the sections remain unchanged -->
         <section id="publications">
             <h2>Publications</h2>
             <p>Here are my publications and preprints:</p>
@@ -315,7 +366,7 @@
         <p>行到水穷处，坐看云起时。 （唐）-- 王维 </p>
     </footer>
 
-    <a href="#" class="back-to-top">↑ Back to Top</a>
+    <a href="#" class="back-to-top">↑</a>
 
     <script>
         // Back to top button
@@ -332,6 +383,16 @@
         backToTopButton.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
