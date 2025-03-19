@@ -11,42 +11,121 @@
         /* General Styles */
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            font-size: 18px;
+            color: #333;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #87CEEB, #ffffff);
-            color: #333;
-            line-height: 1.8;
-            font-size: 16px;
+            background: #f9f9f9;
         }
 
-     header {
-    background: linear-gradient(to bottom, #3a345e, #87CEEB);
-    color: white;
-    padding: 30px 0;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: #1a50bc;
+        }
 
-header h1 {
-    margin: 0;
-    font-size: 2em;
-    font-weight: 700;
-    letter-spacing: -1px;
-    animation: fadeIn 2s ease-in-out;
-}
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
 
-header p {
-    margin: 5px 0;
-    font-size: 0.9em;
-    opacity: 0.9;
-    line-height: 1.2;
-}
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
+        h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from hyperlinks */
+            color: #1a50bc;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+            color: #2c3650; /* Change color on hover */
+        }
+
+        /* Header */
+        header {
+            background: white;
+            color: #333;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: -1px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            opacity: 0.9;
+            line-height: 1.2;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            background: #ffffff;
+            padding: 200px 15px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 120px;
+            box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #1a50bc;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 15px;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        nav a:hover {
+            background: #1a50bc;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        nav a.active {
+            background: #1a50bc;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Container */
         .container {
-            width: 90%;
-            max-width: 1280px;
-            margin: auto;
-            overflow: hidden;
+            width: 90%; /* Adjusted width for larger sections */
+            max-width: 1400px; /* Increased max-width for more space */
+            margin: 0 auto; /* Center the container */
+            padding-top: 20px;
+            padding-left: 140px; /* Add padding to avoid overlapping with the nav bar */
         }
 
         /* About Section */
@@ -56,10 +135,10 @@ header p {
             justify-content: space-between;
             margin-top: 40px;
             gap: 40px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            background: white; /* Same as other sections */
+            border-radius: 10px; /* Same as other sections */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Same as other sections */
         }
 
         .about-text {
@@ -74,18 +153,6 @@ header p {
             color: #444;
         }
 
-        .about-text a {
-            text-decoration: none;
-            color: #1a50bc;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .about-text a:hover {
-            text-decoration: underline;
-            color: #2c3650;
-        }
-
         .profile {
             flex-shrink: 0;
             text-align: right;
@@ -96,7 +163,7 @@ header p {
             height: auto;
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            border: 2px solid #fff;
+            border: 4px solid white;
             transition: transform 0.3s ease;
         }
 
@@ -104,121 +171,24 @@ header p {
             transform: scale(1.05);
         }
 
-        @media (max-width: 768px) {
-            .about-section {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-
-            .about-text {
-                padding-right: 0;
-                text-align: center;
-            }
-
-            .profile {
-                text-align: center;
-            }
-
-            .profile img {
-                margin-top: 20px;
-            }
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #ADD8E6;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        nav a {
-            color: #1a50bc;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            transition: background 0.3s, color 0.3s, transform 0.3s;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background: #1a50bc;
-            color: white;
-            transform: translateY(-3px);
-        }
-
         /* Sections */
         section {
-            padding: 40px;
-            background: white;
+            padding: 30px;
+            background: white; /* Same as other sections */
             margin-top: 40px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px; /* Same as other sections */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15); /* Same as other sections */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         section:hover {
             transform: translateY(-5px);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Teaching Section */
-        .teaching-entry {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .teaching-entry h3 {
-            color: #2c3650;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .teaching-entry p {
-            margin: 10px 0;
-        }
-
-        .teaching-entry ul {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-
-        .teaching-entry ul li {
-            margin-bottom: 10px;
-        }
-
-        .teaching-entry a {
-            color: #1a50bc;
-            text-decoration: none;
-        }
-
-        .teaching-entry a:hover {
-            text-decoration: underline;
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
         }
 
         /* Publications Section */
-        .publication-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 40px;
-            gap: 40px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
         .publication-list li {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .publication-list a {
@@ -234,37 +204,41 @@ header p {
         .links-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 10px;
         }
 
         .links-grid a {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
+            padding: 10px;
             background: #f9f9f9;
             border-radius: 5px;
             color: #1a50bc;
             text-decoration: none;
-            transition: background 0.3s, color 0.3s, transform 0.3s;
+            transition: background 0.3s, color 0.3s;
         }
 
         .links-grid a:hover {
             background: #1a50bc;
             color: white;
-            transform: translateY(-3px);
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 40px;
-            background: linear-gradient(to bottom, #ffffff, #87CEEB);
-            color: black;
+            background: white; /* Same as other sections */
+            color: #333; /* Dark text for better contrast */
             margin-top: 40px;
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
             font-size: 1.1em;
+        }
+
+        footer p {
+            font-style: italic;
+            opacity: 0.8;
         }
 
         /* Back to Top Button */
@@ -287,39 +261,58 @@ header p {
             transform: translateY(-3px);
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .links-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            nav {
+                width: 100%;
+                height: auto;
+                position: static;
+                flex-direction: row;
+                justify-content: center;
+                padding: 10px;
             }
 
-            header h1 {
-                font-size: 2.5em;
+            .container {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 0; /* Reset padding for mobile */
             }
 
-            section {
-                padding: 20px;
+            header {
+                margin-left: 0;
+            }
+
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile img {
+                margin-top: 20px;
+            }
+
+            .publication-list li {
+                white-space: normal; /* Allow line breaks on mobile */
             }
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+       
     </style>
 </head>
 <body>
-    <header>
-        <h1>Shangjie Yang</h1>
-        <p class="p3"><span class="s1">Universidade de São Paulo</span></p>
-        <p class="p3"><span class="s1"> Rua do Matão, 1010 – CEP 05508-090, São Paulo, Brasil</span></p>
-        <p class="p3"><span class="s1">e-mail: shjyang (at) ime.usp.br &nbsp &nbsp yashjie (at) gmail.com</span></p>
-    </header>
     <nav>
         <a href="#about">About</a>
         <a href="#publications">Publications</a>
         <a href="#teaching">Teaching</a>
         <a href="#links">Links</a>
     </nav>
+    <header>
+        <h1>Shangjie Yang</h1>
+        <p class="p3"><span class="s1">Universidade de São Paulo</span></p>
+        <p class="p3"><span class="s1"> Rua do Matão, 1010 – CEP 05508-090, São Paulo, Brasil</span></p>
+        <p class="p3"><span class="s1">e-mail: shjyang (at) ime.usp.br &nbsp &nbsp yashjie (at) gmail.com</span></p>
+    </header>
     <div class="container">
         <section id="about">
             <h2>About Me</h2>
@@ -337,22 +330,21 @@ header p {
         <section id="publications">
             <h2>Publications</h2>  
             <p>Here are my publications and preprints:</p>
-           <div class="publication-section">
             <ul class="publication-list">
-                <li><b>8. S. Yang</b>, Cutoff of the simple exclusion process with inhomogeneous conductances <a href="https://arxiv.org/pdf/2409.16337">[Arxiv]</a></li>
-                <li><b>7. S. Yang</b>, The spectral gap and principal eigenfunction of the random conductance model in a line segment <a href="https://arxiv.org/pdf/2408.07139">[Arxiv]</a></li>
+                <li><b>8. S. Yang</b>, Cutoff of the simple exclusion process with inhomogeneous conductances <a href="https://arxiv.org/pdf/2409.16337" class="badge">[Arxiv]</a></li>
+                <li><b>7. S. Yang</b>, The spectral gap and principal eigenfunction of the random conductance model in a line segment <a href="https://arxiv.org/pdf/2408.07139" class="badge">[Arxiv]</a></li>
                 <li><b>6. Y. Wang, K. Xiang, S. Yang, and Lang Zou,</b> The High-Order Corrections of Discrete Harmonic Measures and Their Correction Constants</b><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://link.springer.com/article/10.1007/s10955-024-03292-x">[At publisher]</a> <b>Journal of Statistical Physics</b>. 191:81 (2024).</li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://link.springer.com/article/10.1007/s10955-024-03292-x" class="badge">[At publisher]</a> <b>Journal of Statistical Physics</b>. 191:81 (2024).</li>
                 <li><b>5. N. Feldheim and S. Yang,</b> Typical height of the (2+1)-D Solid-on-Solid surface with pinning above a wall in the delocalized phase
-                    <a href="https://arxiv.org/pdf/2301.09197.pdf">[Arxiv]</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.sciencedirect.com/science/article/pii/S030441492300176X?dgcid=author">[At publisher]</a> <b>Stochastic Processes and their Applications</b>. 165 (2023), 168-182.</li>
+                    <a href="https://arxiv.org/pdf/2301.09197.pdf" class="badge">[Arxiv]</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.sciencedirect.com/science/article/pii/S030441492300176X?dgcid=author" class="badge">[At publisher]</a> <b>Stochastic Processes and their Applications</b>. 165 (2023), 168-182.</li>
                 <li><b>4. G. Amir and S. Yang,</b> The branching number of intermediate growth trees 
-                    <a href="https://arxiv.org/pdf/2205.14238.pdf">[Arxiv]</a> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://ems.press/journals/ggd/articles/14298397">[At publisher]</a> <b>Groups, Geometry, and Dynamics</b>. 2024.</li>
+                    <a href="https://arxiv.org/pdf/2205.14238.pdf" class="badge">[Arxiv]</a> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://ems.press/journals/ggd/articles/14298397" class="badge">[At publisher]</a> <b>Groups, Geometry, and Dynamics</b>. 2024.</li>
                 <li><b>3. H. Lacoin and S. Yang,</b> Mixing time for the asymmetric simple exclusion process in a random environment
-                    <a href="https://arxiv.org/pdf/2102.02606.pdf">[Arxiv]</a> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://dx.doi.org/10.1214/23-AAP1967">[At publisher]</a> <b>Annals of Applied Probability</b>. 34(1A): 388-427 (February 2024).</li>
+                    <a href="https://arxiv.org/pdf/2102.02606.pdf" class="badge">[Arxiv]</a> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://dx.doi.org/10.1214/23-AAP1967" class="badge">[At publisher]</a> <b>Annals of Applied Probability</b>. 34(1A): 388-427 (February 2024).</li>
                 <li><b>2. H. Lacoin and S. Yang,</b> Metastability for expanding bubbles on a sticky substrate
-                    <a href="https://arxiv.org/pdf/2007.07832.pdf">[Arxiv]</a>  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp <a href="https://projecteuclid.org/journals/annals-of-applied-probability/volume-32/issue-5/Metastability-for-expanding-bubbles-on-a-sticky-substrate/10.1214/21-AAP1763.full">[At publisher]</a> <b>Annals of Applied Probability</b>. 32(5): 3408-3449 (October 2022).</li>
+                    <a href="https://arxiv.org/pdf/2007.07832.pdf" class="badge">[Arxiv]</a>  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp <a href="https://projecteuclid.org/journals/annals-of-applied-probability/volume-32/issue-5/Metastability-for-expanding-bubbles-on-a-sticky-substrate/10.1214/21-AAP1763.full" class="badge">[At publisher]</a> <b>Annals of Applied Probability</b>. 32(5): 3408-3449 (October 2022).</li>
                 <li><b>1. S. Yang,</b> Cutoff for polymer pinning dynamics in the repulsive phase
-                    <a href="https://arxiv.org/pdf/1909.04635.pdf">[Arxiv]</a> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<a href="https://projecteuclid.org/journals/annales-de-linstitut-henri-poincare-probabilites-et-statistiques/volume-57/issue-3/Cutoff-for-polymer-pinning-dynamics-in-the-repulsive-phase/10.1214/20-AIHP1127.full">[At publisher]</a> <b>Annales de l'Institut Henri Poincaré, Probabilités et Statistiques</b>. 57(3): 1306-1335 (2021).</li>
+                    <a href="https://arxiv.org/pdf/1909.04635.pdf" class="badge">[Arxiv]</a> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<a href="https://projecteuclid.org/journals/annales-de-linstitut-henri-poincare-probabilites-et-statistiques/volume-57/issue-3/Cutoff-for-polymer-pinning-dynamics-in-the-repulsive-phase/10.1214/20-AIHP1127.full" class="badge">[At publisher]</a> <b>Annales de l'Institut Henri Poincaré, Probabilités et Statistiques</b>. 57(3): 1306-1335 (2021).</li>
             </ul>
         </section>
 
@@ -442,6 +434,22 @@ header p {
                 });
             });
         });
+
+        // Highlight active section in navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    navLinks[index].classList.add('active');
+                }
+            });
+        });
+
+      
     </script>
 </body>
 </html>
