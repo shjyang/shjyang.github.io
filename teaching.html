@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shangjie Yang</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://shjyang.github.io/">
+    <link rel="shortcut icon" href="https://shjyang.github.io/favicon.ico" type="image/x-icon">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            font-size: 18px;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: #1a50bc;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from hyperlinks */
+            color: #1a50bc;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+            color: #2c3650; /* Change color on hover */
+        }
+
+        /* Header */
+        header {
+            background: white;
+            color: #333;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: -1px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            opacity: 0.9;
+            line-height: 1.2;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            background: #ffffff;
+            padding: 200px 15px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 120px;
+            box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #1a50bc;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 15px;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        nav a:hover {
+            background: #1a50bc;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        nav a.active {
+            background: #1a50bc;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Container */
+        .container {
+            width: 90%; /* Adjusted width for larger sections */
+            max-width: 1400px; /* Increased max-width for more space */
+            margin: 0 auto; /* Center the container */
+            padding-top: 20px;
+            padding-left: 140px; /* Add padding to avoid overlapping with the nav bar */
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 40px;
+            padding: 30px;
+            background: white; /* Same as other sections */
+            border-radius: 10px; /* Same as other sections */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Same as other sections */
+        }
+
+        .about-text {
+            flex: 1;
+            padding-right: 30px;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #444;
+        }
+
+        .profile {
+            flex-shrink: 0;
+            text-align: right;
+        }
+
+        .profile img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border: 4px solid white;
+            transition: transform 0.3s ease;
+        }
+
+        .profile img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Sections */
+        section {
+            padding: 30px;
+            background: white; /* Same as other sections */
+            margin-top: 40px;
+            border-radius: 10px; /* Same as other sections */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15); /* Same as other sections */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+ /* Teaching Section */
+        .teaching-entry {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .teaching-entry h3 {
+            color: #2c3650;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .teaching-entry p {
+            margin: 10px 0;
+        }
+
+        .teaching-entry ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .teaching-entry ul li {
+            margin-bottom: 10px;
+        }
+
+        .teaching-entry a {
+            color: #1a50bc;
+            text-decoration: none;
+        }
+
+        .teaching-entry a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        /* Publications Section */
+        .publication-list li {
+            margin-bottom: 15px;
+        }
+
+        .publication-list a {
+            color: #1a50bc;
+            text-decoration: none;
+        }
+
+        .publication-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Links Section */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .links-grid a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            color: #1a50bc;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .links-grid a:hover {
+            background: #1a50bc;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: white; /* Same as other sections */
+            color: #333; /* Dark text for better contrast */
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 1.1em;
+        }
+
+        footer p {
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1a50bc;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            display: none;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top:hover {
+            background: #2c3650;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                width: 100%;
+                height: auto;
+                position: static;
+                flex-direction: row;
+                justify-content: center;
+                padding: 10px;
+            }
+
+            .container {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 0; /* Reset padding for mobile */
+            }
+
+            header {
+                margin-left: 0;
+            }
+
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile img {
+                margin-top: 20px;
+            }
+
+            .publication-list li {
+                white-space: normal; /* Allow line breaks on mobile */
+            }
+        }
+
+       
+    </style>
+</head>
+<body>
+   
+    <header>
+        <h1>Shangjie Yang</h1>
+<p class="p3"><span class="s1"><strong>Universidade Federal Fluminense</strong></span></p>
+<p class="p3"><span class="s1"><strong>e-mail</strong>:syang (at) id.uff.br &nbsp;&nbsp;   yashjie (at) gmail.com</span></p> 
+<p class="p3"><span class="s1"><strong>Office</strong>: Gabinete 86, Terceira andar, Bloco G,  Campus de Gragoatá.
+ <p class="p3"><span class="s1"><strong>Address</strong>:  
+Rua Professor Marcos Waldemar de Freitas Reis, s/n, São Domingos, Niterói/RJ - CEP: 24210-201, Brasil. </span></p>    
+
+    </header>
+    <div class="container">
+       
+
+ <h2>Teaching</h2>
+
+<div class="teaching-entry">
+                <h3>Teaching in UFF</h3>
+                <p><strong>Regular Course:</strong> Cálculo 1 (11/05/2025 --) [<a href="https://shjyang.github.io/cro2025-UFF.pdf">Cronagrama</a>]  [<a href="https://seet.eaduff.org/ead/login/index.php">Moodle</a>]</p>              
+                <p><strong>References:</strong></p>
+                <ul>
+                    <li><a href="https://wodson.org/Apostila.pdf">Cálculo 1  (S. Friedli)</a> <a href="https://www.youtube.com/watch?v=KyVYNbwfjtU&list=PLOiKHlNoCwd2s7rq1P4fGQ0iqf-eWi0Wo&index=2&ab_channel=sachafriedli">[Vídeos de aulas]</a> </li>  
+                    <li><a href="https://ia804504.us.archive.org/27/items/calculo-vol-1-6ed/Calculo-Vol1-6ed.pdf">Cálculo 1  (James Stewart)</a></li>  
+                    <li><a href="https://autcontroltelecom.wordpress.com/wp-content/uploads/2012/11/01cc3a1l-thomas3.pdf">Cálculo   (George B. Thomas)</a></li>              
+                </ul>
+            </div>
+
+
+            <div class="teaching-entry">
+                <h3>Teaching in IME-USP</h3>
+                <p><strong>Summer Course:</strong> <a href= "https://www.ime.usp.br/verao/index.php/turmas/apresentacao.php">Análise Combinatória, Probabilidades e Aplicações</a> (06/01/2025 - 14/02/2025, 60 hours)</p>
+                <p><strong>Monitor:</strong> Eduardo Janotti</p>
+                <p><strong>Email:</strong> <a href="mailto:eduardojanotti@ime.usp.br">eduardojanotti@ime.usp.br</a></p>
+                <p><strong>References:</strong></p>
+                <ul>
+                    <li><a href="https://loja.sbm.org.br/analise-combinatoria-e-probabilidade.html">Análise Combinatória e Probabilidade (A. Morgado, J. Pitombeira, P. Carvalho, P. Fernandez)</a></li>
+                    <li><a href="https://www.amazon.com/First-Course-Probability-9th/dp/032179477X">A First Course in Probability (S. Ross)</a></li>
+                    <li><a href="https://www.amazon.com.br/Princ%C3%ADpios-Combinat%C3%B3ria-Probabilidade-Tertuliano-Franco/dp/659905286X">Princípios de Combinatória e Probabilidade (T. Franco)</a></li>
+                </ul>
+            </div>
+
+            <div class="teaching-entry">
+                <h3>Teaching in UFBA</h3>
+                <p><strong>Minicourse:</strong> <a href="https://sites.google.com/view/profe-ime-ufba/events/minicursos-2021?authuser=0">Mixing time for interface models and particle system</a> (Nov/2021 - Jan/2022)</p>
+                <p><strong>References:</strong></p>
+                <ul>
+                    <li><a href="https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf">Markov Chains and Mixing Times (D. Levin and Y. Peres)</a></li>     
+                    <li><a href="https://www.cambridge.org/core/books/markov-chains/A3F966B10633A32C8F06F37158031739">Markov Chains (J. Norris)</a></li>
+                    <li><a href="https://shjyang.github.io/thesis.pdf">Mixing Times for Interface Models and Particle System (S. Yang)</a></li>
+                </ul>
+            </div>
+
+            <div class="teaching-entry">
+                <h3>Teaching Assistant in IMPA</h3>
+                <ul>
+                    <li><strong><a href="https://impa.br/en_US/ensino/programas-de-formacao/mestrado-academico/disciplinas-mestrado-academico/probabilidade-i/">Probability 1</a></strong> (03/2018 - 06/2018)</li>
+                    <li><strong><a href="https://impa.br/en_US/ensino/programas-de-formacao/mestrado-academico/disciplinas-mestrado-academico/probabilidade-i/">Stochastic Process</a></strong> (the second half) (10/2019 - 11/2019)</li>
+                    <li><strong><a href="https://impa.br/en_US/ensino/programas-de-formacao/mestrado-academico/disciplinas-mestrado-academico/cadeia-de-markov/">Markov Chains and Mixing Times</a></strong> (01/2020 - 02/2020)</li>
+                </ul>
+            </div>
+        </section>
+
+
+
+
+       
+    <footer>
+        <p>行到水穷处，坐看云起时。 （唐）-- 王维 </p>
+    </footer>
+
+
+    <a href="#" class="back-to-top">↑</a>
+
+    <script>
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Highlight active section in navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    navLinks[index].classList.add('active');
+                }
+            });
+        });
+
+      
+    </script>
+</body>
+</html>
