@@ -4,425 +4,469 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shangjie Yang</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://shjyang.github.io/">
     <link rel="shortcut icon" href="https://shjyang.github.io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* General Styles */
+        /* --- CSS Variables for Easy Theming --- */
+        :root {
+            --primary-color: #1a50bc;
+            --primary-dark: #123a8f;
+            --primary-light: #eef2ff;
+            --text-main: #2c3e50;
+            --text-light: #64748b;
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --border-radius: 12px;
+            --sidebar-width: 260px;
+        }
+
+        /* --- Reset & Base Styles --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            font-size: 18px;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background: #f9f9f9;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            color: #1a50bc;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-
-        p {
-            margin-bottom: 20px;
-            color: #444;
-        }
-
-        a {
-            text-decoration: none; /* Remove underline from hyperlinks */
-            color: #1a50bc;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            text-decoration: underline; /* Underline on hover */
-            color: #2c3650; /* Change color on hover */
-        }
-
-        /* Header */
-        header {
-            background: white;
-            color: #333;
-            padding: 40px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-weight: 700;
-            letter-spacing: -1px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        header p {
-            margin: 5px 0;
-            font-size: 0.9em;
-            opacity: 0.9;
-            line-height: 1.2;
-        }
-
-        /* Navigation Bar */
-        nav {
+            color: var(--text-main);
+            background: var(--bg-body);
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            background: #ffffff;
-            padding: 200px 15px 30px;
+            min-height: 100vh;
+        }
+
+        a { text-decoration: none; color: var(--primary-color); transition: all 0.2s; }
+        a:hover { color: var(--primary-dark); }
+        h1, h2, h3 { color: var(--text-main); font-weight: 700; }
+
+        /* --- Sidebar Navigation --- */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--bg-card);
+            height: 100vh;
             position: fixed;
             top: 0;
             left: 0;
-            height: 100vh;
-            width: 120px;
-            box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-right: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
             z-index: 1000;
         }
 
-        nav a {
-            color: #1a50bc;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 15px;
-            transition: background 0.3s, color 0.3s, transform 0.3s;
-            border-radius: 5px;
-            margin: 5px 0;
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            display: block;
         }
 
-        nav a:hover {
-            background: #1a50bc;
-            color: white;
-            transform: translateX(5px);
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
-        nav a.active {
-            background: #1a50bc;
-            color: white;
-            font-weight: bold;
-        }
-
-        /* Container */
-        .container {
-            width: 90%; /* Adjusted width for larger sections */
-            max-width: 1400px; /* Increased max-width for more space */
-            margin: 0 auto; /* Center the container */
-            padding-top: 20px;
-            padding-left: 140px; /* Add padding to avoid overlapping with the nav bar */
-        }
-
-        /* About Section */
-        .about-section {
+        .nav-item {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-top: 40px;
-            gap: 40px;
-            padding: 30px;
-            background: white; /* Same as other sections */
-            border-radius: 10px; /* Same as other sections */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Same as other sections */
+            padding: 0.75rem 1rem;
+            color: var(--text-light);
+            border-radius: var(--border-radius);
+            font-weight: 500;
         }
 
-        .about-text {
+        .nav-item i { margin-right: 12px; width: 20px; text-align: center; }
+
+        .nav-item:hover, .nav-item.active {
+            background: var(--primary-light);
+            color: var(--primary-color);
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            margin-left: var(--sidebar-width);
             flex: 1;
-            padding-right: 30px;
-            line-height: 1.8;
+            padding: 3rem 4rem;
+            max-width: 1400px;
         }
 
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            color: #444;
-        }
-
-        .profile {
-            flex-shrink: 0;
-            text-align: right;
-        }
-
-        .profile img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            border: 4px solid white;
-            transition: transform 0.3s ease;
-        }
-
-        .profile img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Sections */
+        /* --- Sections & Cards --- */
         section {
-            padding: 30px;
-            background: white; /* Same as other sections */
-            margin-top: 40px;
-            border-radius: 10px; /* Same as other sections */
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15); /* Same as other sections */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 2rem;
         }
 
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+        section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--primary-light);
+            color: var(--primary-color);
         }
 
- /* Teaching Section */
-        .teaching-entry {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .teaching-entry h3 {
-            color: #2c3650;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .teaching-entry p {
-            margin: 10px 0;
-        }
-
-        .teaching-entry ul {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-
-        .teaching-entry ul li {
-            margin-bottom: 10px;
-        }
-
-        .teaching-entry a {
-            color: #1a50bc;
-            text-decoration: none;
-        }
-
-        .teaching-entry a:hover {
-            text-decoration: underline;
-        }
-
-
-
-        /* Publications Section */
-        .publication-list li {
-            margin-bottom: 15px;
-        }
-
-        .publication-list a {
-            color: #1a50bc;
-            text-decoration: none;
-        }
-
-        .publication-list a:hover {
-            text-decoration: underline;
-        }
-
-        /* Links Section */
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .links-grid a {
+        /* --- Header / Profile Section --- */
+        .profile-header {
             display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .profile-info h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--primary-color); }
+        .affiliation { font-size: 1.2rem; font-weight: 500; margin-bottom: 1.5rem; color: var(--text-main); }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .contact-item { display: flex; gap: 10px; align-items: flex-start; }
+        .contact-item i { color: var(--primary-color); margin-top: 5px; }
+
+        /* --- About Section --- */
+        .about-layout {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .about-text { flex: 1; }
+        .about-text p { margin-bottom: 1rem; text-align: justify; }
+
+        .profile-img-container {
+            flex-shrink: 0;
+            width: 250px;
+        }
+
+        .profile-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 4px solid #fff;
+        }
+
+        /* --- Publications List --- */
+        .pub-list { list-style: none; }
+        
+        .pub-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .pub-item:last-child { border-bottom: none; }
+
+        .pub-title {
+            display: block;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-main);
+        }
+
+        .pub-authors { color: var(--text-main); margin-bottom: 0.5rem; display: block; }
+        
+        .badge-container { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: var(--primary-light);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .badge:hover { background: var(--primary-color); color: white; text-decoration: none; }
+        .badge i { margin-right: 5px; }
+
+        /* --- Teaching Call to Action --- */
+        .teaching-cta {
+            background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+            border: 1px solid #e2e8f0;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .btn-primary:hover { transform: translateY(-2px); text-decoration: none; background: var(--primary-dark); }
+
+        /* --- Links Grid (MODIFIED FOR HORIZONTAL DISPLAY) --- */
+        .links-grid {
+            display: flex; /* Use flexbox for horizontal layout */
+            flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+            gap: 1rem;
+            overflow-x: auto; /* Add horizontal scroll if links exceed container width */
+            padding-bottom: 10px; /* Space for scrollbar */
+        }
+
+        .link-card {
+            /* Remove fixed grid column properties */
+            flex-shrink: 0; /* Prevent items from shrinking */
+            width: 180px; /* Set a fixed width for each card */
+            
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10px;
-            background: #f9f9f9;
-            border-radius: 5px;
-            color: #1a50bc;
-            text-decoration: none;
-            transition: background 0.3s, color 0.3s;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: var(--border-radius);
+            color: var(--text-main);
+            transition: all 0.2s;
+            text-align: center;
         }
 
-        .links-grid a:hover {
-            background: #1a50bc;
-            color: white;
+        .link-card i { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--primary-color); }
+        .link-card:hover { background: var(--primary-color); color: white; transform: translateY(-3px); }
+        .link-card:hover i { color: white; }
+        
+        /* Optional: Hide scrollbar for aesthetic purposes, but keep functionality */
+        .links-grid::-webkit-scrollbar {
+            height: 6px;
+        }
+        .links-grid::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 3px;
         }
 
-        /* Footer */
+        /* --- Footer --- */
         footer {
             text-align: center;
-            padding: 40px;
-            background: white; /* Same as other sections */
-            color: #333; /* Dark text for better contrast */
-            margin-top: 40px;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-            font-size: 1.1em;
-        }
-
-        footer p {
+            padding-top: 2rem;
+            color: var(--text-light);
             font-style: italic;
-            opacity: 0.8;
         }
 
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #1a50bc;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 50%;
-            text-decoration: none;
-            display: none;
-            transition: background 0.3s, transform 0.3s;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .back-to-top:hover {
-            background: #2c3650;
-            transform: translateY(-3px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav {
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            body { flex-direction: column; }
+            
+            .sidebar {
                 width: 100%;
                 height: auto;
-                position: static;
+                position: relative;
+                padding: 1rem;
                 flex-direction: row;
-                justify-content: center;
-                padding: 10px;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #e2e8f0;
+                border-right: none;
             }
 
-            .container {
-                width: 90%;
-                margin-left: auto;
-                margin-right: auto;
-                padding-left: 0; /* Reset padding for mobile */
-            }
+            .nav-brand { margin-bottom: 0; font-size: 1.2rem; }
+            
+            .nav-links { flex-direction: row; gap: 0.5rem; flex-wrap: wrap; }
+            .nav-item { padding: 0.5rem; font-size: 0.9rem; }
+            .nav-item span { display: none; } /* Hide text on mobile, keep icons */
+            .nav-item i { margin-right: 0; font-size: 1.1rem; }
 
-            header {
-                margin-left: 0;
-            }
-
-            .about-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile img {
-                margin-top: 20px;
-            }
-
-            .publication-list li {
-                white-space: normal; /* Allow line breaks on mobile */
+            .main-content { margin-left: 0; padding: 1.5rem; }
+            
+            .profile-header { flex-direction: column; }
+            .about-layout { flex-direction: column-reverse; }
+            .profile-img-container { width: 100%; max-width: 300px; margin: 0 auto 1.5rem auto; }
+            .contact-grid { grid-template-columns: 1fr; }
+            
+            /* Ensure horizontal scroll on mobile for links-grid */
+            .links-grid {
+                overflow-x: scroll;
             }
         }
-
-       
     </style>
 </head>
 <body>
+
+    <nav class="sidebar">
   
-    <header>
-        <h1>Shangjie Yang</h1>
-    <p class="p3"><span class="s1"><strong>Universidade Federal Fluminense</strong></span></p>
-<p class="p3"><span class="s1"><strong>e-mail</strong>:syang (at) id.uff.br &nbsp;&nbsp;   yashjie (at) gmail.com</span></p> 
-<p class="p3"><span class="s1"><strong>Office</strong>:Gabinete 30, Quinto andar, Bloco G,  Campus de Gragoatá.
- <p class="p3"><span class="s1"><strong>Address</strong>:  
-Rua Professor Marcos Waldemar de Freitas Reis, s/n, São Domingos, Niterói/RJ - CEP: 24210-201, Brasil. </span></p>    
-    </header>
-    <div class="container">
+        <div class="nav-links">
+            
+            <a href="#publications" class="nav-item">
+                <i class="fas fa-book-open"></i> <span>Publications</span>
+            </a>
+           
+        </div>
+    </nav>
+
+    <main class="main-content">
+        
+        <section id="header">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <h1>Shangjie Yang</h1>
+                    <p class="affiliation">Universidade Federal Fluminense (UFF)</p>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                syang (at) id.uff.br<br>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                Gabinete 30, Quinto andar, Bloco G,<br>
+                                Campus de Gragoatá.
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                Rua Professor Marcos Waldemar de Freitas Reis, s/n,<br>
+                                São Domingos, Niterói/RJ - CEP: 24210-201, Brasil.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
        
 
-<section id="publications">
-            <h2>Publications</h2>  
-       <p>Here are my publications and preprints:</p>
-            <ul class="publication-list">
-                <li><b>8. S. Yang</b>, Cutoff of the simple exclusion process with inhomogeneous conductances <a href="https://arxiv.org/pdf/2409.16337">[Arxiv]</a></li>
-                <li><b>7. S. Yang</b>, The spectral gap and principal eigenfunction of the random conductance model in a line segment <a href="https://arxiv.org/pdf/2408.07139">[Arxiv]</a></li>
-                <li><b>6. Y. Wang, K. Xiang, S. Yang, and Lang Zou,</b> The High-Order Corrections of Discrete Harmonic Measures and Their Correction Constants</b><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://link.springer.com/article/10.1007/s10955-024-03292-x">[At publisher]</a> &nbsp;&nbsp; <a href="https://shjyang.github.io/JSP-harmonic.pdf">[Published version]</a> <b>Journal of Statistical Physics</b>. 191:81 (2024).</li>
-                <li><b>5. N. Feldheim and S. Yang,</b> Typical height of the (2+1)-D Solid-on-Solid surface with pinning above a wall in the delocalized phase
-                    <a href="https://arxiv.org/pdf/2301.09197.pdf">[Arxiv]</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.sciencedirect.com/science/article/pii/S030441492300176X?dgcid=author">[At publisher]</a> &nbsp;&nbsp; <a href="https://shjyang.github.io/spa.2023.08.009.pdf">[Published version]</a> <b>Stochastic Processes and their Applications</b>. 165 (2023), 168-182.</li>
-                <li><b>4. G. Amir and S. Yang,</b> The branching number of intermediate growth trees 
-                    <a href="https://arxiv.org/pdf/2205.14238.pdf">[Arxiv]</a> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://ems.press/journals/ggd/articles/14298397">[At publisher]</a> &nbsp;&nbsp; <a href="https://shjyang.github.io/ggd49581.pdf">[Published version]</a> <b>Groups, Geometry, and Dynamics</b>. 2024.</li>
-                <li><b>3. H. Lacoin and S. Yang,</b> Mixing time for the asymmetric simple exclusion process in a random environment
-                    <a href="https://arxiv.org/pdf/2102.02606.pdf">[Arxiv]</a> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://dx.doi.org/10.1214/23-AAP1967">[At publisher]</a> &nbsp;&nbsp;<a href="https://shjyang.github.io/AAP1967.pdf">[Published version]</a> <b>Annals of Applied Probability</b>. 34(1A): 388-427 (February 2024).</li>
-                <li><b>2. H. Lacoin and S. Yang,</b> Metastability for expanding bubbles on a sticky substrate
-                    <a href="https://arxiv.org/pdf/2007.07832.pdf">[Arxiv]</a>  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp <a href="https://projecteuclid.org/journals/annals-of-applied-probability/volume-32/issue-5/Metastability-for-expanding-bubbles-on-a-sticky-substrate/10.1214/21-AAP1763.full">[At publisher]</a> &nbsp;&nbsp;<a href="https://shjyang.github.io/AAP1763.pdf">[Published version]</a> <b>Annals of Applied Probability</b>. 32(5): 3408-3449 (October 2022).</li>
-                <li><b>1. S. Yang,</b> Cutoff for polymer pinning dynamics in the repulsive phase
-                    <a href="https://arxiv.org/pdf/1909.04635.pdf">[Arxiv]</a> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<a href="https://projecteuclid.org/journals/annales-de-linstitut-henri-poincare-probabilites-et-statistiques/volume-57/issue-3/Cutoff-for-polymer-pinning-dynamics-in-the-repulsive-phase/10.1214/20-AIHP1127.full">[At publisher]</a> &nbsp;&nbsp; <a href="https://shjyang.github.io/AIHP1127.pdf">[Published version]</a> <b>Annales de l'Institut Henri Poincaré, Probabilités et Statistiques</b>. 57(3): 1306-1335 (2021).</li>
+        <section id="publications">
+            <h2>Publications & Preprints</h2>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <span class="pub-title">8. Cutoff of the simple exclusion process with inhomogeneous conductances</span>
+                    <span class="pub-authors">S. Yang</span>
+                    <div class="badge-container">
+                        <span style="color: #666; font-size: 0.9em;">Accepted by <b>Annales de l'Institut Henri Poincaré, Probabilités et Statistiques</b></span>
+                        <a href="https://arxiv.org/pdf/2409.16337" class="badge"><i class="fas fa-file-pdf"></i> Arxiv</a>
+                    </div>
+                </li>
+
+                <li class="pub-item">
+                    <span class="pub-title">7. The spectral gap and principal eigenfunction of the random conductance model in a line segment</span>
+                    <span class="pub-authors">S. Yang</span>
+                    <div class="badge-container">
+                        <a href="https://arxiv.org/pdf/2408.07139" class="badge"><i class="fas fa-file-pdf"></i> Arxiv</a>
+                    </div>
+                </li>
+
+                <li class="pub-item">
+                    <span class="pub-title">6. The High-Order Corrections of Discrete Harmonic Measures and Their Correction Constants</span>
+                    <span class="pub-authors">Y. Wang, K. Xiang, S. Yang, and L. Zou</span>
+                    <div class="badge-container">
+                        <span style="color: #666; font-size: 0.9em;"><b>Journal of Statistical Physics</b>. 191:81 (2024)</span>
+                        <a href="https://link.springer.com/article/10.1007/s10955-024-03292-x" class="badge"><i class="fas fa-external-link-alt"></i> Publisher</a> &nbsp;&nbsp; <a href="https://shjyang.github.io/JSP-harmonic.pdf">[Published version]</a>
+                    </div>
+                </li>
+
+                <li class="pub-item">
+                    <span class="pub-title">5. Typical height of the (2+1)-D Solid-on-Solid surface with pinning above a wall in the delocalized phase</span>
+                    <span class="pub-authors">N. Feldheim and S. Yang</span>
+                    <div class="badge-container">
+                        <span style="color: #666; font-size: 0.9em;"><b>Stochastic Processes and their Applications</b>. 165 (2023), 168-182</span>
+                        <a href="https://arxiv.org/pdf/2301.09197.pdf" class="badge"><i class="fas fa-file-pdf"></i> Arxiv</a>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S030441492300176X?dgcid=author" class="badge"><i class="fas fa-external-link-alt"></i> Publisher</a> &nbsp;&nbsp; <a href="https://shjyang.github.io/spa.2023.08.009.pdf">[Published version]</a>
+                    </div>
+                </li>
+
+                <li class="pub-item">
+                    <span class="pub-title">4. The branching number of intermediate growth trees</span>
+                    <span class="pub-authors">G. Amir and S. Yang</span>
+                    <div class="badge-container">
+                        <span style="color: #666; font-size: 0.9em;"><b>Groups, Geometry, and Dynamics</b>. 2024</span>
+                        <a href="https://arxiv.org/pdf/2205.14238.pdf" class="badge"><i class="fas fa-file-pdf"></i> Arxiv</a>
+                        <a href="https://ems.press/journals/ggd/articles/14298397" class="badge"><i class="fas fa-external-link-alt"></i> Publisher</a>&nbsp;&nbsp; <a href="https://shjyang.github.io/ggd49581.pdf">[Published version]</a>
+                    </div>
+                </li>
+
+                <li class="pub-item">
+                    <span class="pub-title">3. Mixing time for the asymmetric simple exclusion process in a random environment</span>
+                    <span class="pub-authors">H. Lacoin and S. Yang</span>
+                    <div class="badge-container">
+                        <span style="color: #666; font-size: 0.9em;"><b>Annals of Applied Probability</b>. 34(1A): 388-427 (2024)</span>
+                        <a href="https://arxiv.org/pdf/2102.02606.pdf" class="badge"><i class="fas fa-file-pdf"></i> Arxiv</a>
+                        <a href="http://dx.doi.org/10.1214/23-AAP1967" class="badge"><i class="fas fa-external-link-alt"></i> Publisher</a>&nbsp;&nbsp;<a href="https://shjyang.github.io/AAP1967.pdf">[Published version]</a>
+                    </div>
+                </li>
+
+                <li class="pub-item">
+                    <span class="pub-title">2. Metastability for expanding bubbles on a sticky substrate</span>
+                    <span class="pub-authors">H. Lacoin and S. Yang</span>
+                    <div class="badge-container">
+                        <span style="color: #666; font-size: 0.9em;"><b>Annals of Applied Probability</b>. 32(5): 3408-3449 (2022)</span>
+                        <a href="https://arxiv.org/pdf/2007.07832.pdf" class="badge"><i class="fas fa-file-pdf"></i> Arxiv</a>
+                        <a href="https://projecteuclid.org/journals/annals-of-applied-probability/volume-32/issue-5/Metastability-for-expanding-bubbles-on-a-sticky-substrate/10.1214/21-AAP1763.full" class="badge"><i class="fas fa-external-link-alt"></i> Publisher</a>&nbsp;&nbsp;<a href="https://shjyang.github.io/AAP1763.pdf">[Published version]</a>
+                    </div>
+                </li>
+
+                <li class="pub-item">
+                    <span class="pub-title">1. Cutoff for polymer pinning dynamics in the repulsive phase</span>
+                    <span class="pub-authors">S. Yang</span>
+                    <div class="badge-container">
+                        <span style="color: #666; font-size: 0.9em;"><b>Annales de l'Institut Henri Poincaré, Probabilités et Statistiques</b>. 57(3): 1306-1335 (2021)</span>
+                        <a href="https://arxiv.org/pdf/1909.04635.pdf" class="badge"><i class="fas fa-file-pdf"></i> Arxiv</a>
+                        <a href="https://projecteuclid.org/journals/annales-de-linstitut-henri-poincare-probabilites-et-statistiques/volume-57/issue-3/Cutoff-for-polymer-pinning-dynamics-in-the-repulsive-phase/10.1214/20-AIHP1127.full" class="badge"><i class="fas fa-external-link-alt"></i> Publisher</a> &nbsp;&nbsp; <a href="https://shjyang.github.io/AIHP1127.pdf">[Published version]</a> 
+                    </div>
+                </li>
             </ul>
         </section>
 
        
-    <footer>
-        <p>行到水穷处，坐看云起时。 （唐）-- 王维 </p>
-    </footer>
 
-
-    <a href="#" class="back-to-top">↑</a>
+        <footer>
+            <p>行到水穷处，坐看云起时。 （唐）-- 王维 </p>
+        </footer>
+    </main>
 
     <script>
-        // Back to top button
-        const backToTopButton = document.querySelector('.back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 100) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
-
-        backToTopButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Highlight active section in navigation
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-
-            sections.forEach((section, index) => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= 100 && rect.bottom >= 100) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    navLinks[index].classList.add('active');
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target){
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
 
-      
+        // Highlight active sidebar link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-item');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').includes(current)) {
+                    item.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
